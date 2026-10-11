@@ -1,0 +1,14 @@
+{
+  "name": "bunyanglab",
+  "private": true,
+  "version": "0.2.0",
+  "description": "분양LAB 지식베이스, 정적 사이트, RAG 상담 챗봇 API",
+  "scripts": {
+    "build": "node site/build-faq.js && node scripts/ingest.js",
+    "ingest": "node scripts/ingest.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0"
+  }
+}

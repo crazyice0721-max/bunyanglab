@@ -105,21 +105,171 @@
     });
   });
 
-  // ---------- 문의 폼 (시안: 전송하지 않음) ----------
+  // ---------- 문의 폼: /api/lead로 전송 ----------
   var errEl = document.getElementById('form-error');
   var toastEl = document.getElementById('form-toast');
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  function postJson(url, payload) {
+    return fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, data: j }; });
+    });
+  }
+
+  function showFormError(msg) {
+    errEl.hidden = !msg;
+    errEl.textContent = msg || '';
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     toastEl.hidden = true;
+    var f = form.elements;
+    var services = Array.prototype.map.call(form.querySelectorAll('input[name="services"]:checked'), function (x) { return x.value; });
     var msg = '';
-    if (!form.querySelector('input[name="services"]:checked')) msg = '관심 서비스를 1개 이상 선택해 주세요.';
-    else if (!form.elements.name.value.trim()) msg = '성함 및 직함을 입력해 주세요.';
-    else if (!form.elements.tel.value.trim()) msg = '연락처를 입력해 주세요.';
-    else if (!form.elements.email.checkValidity() || !form.elements.email.value.trim()) msg = '이메일 주소를 올바르게 입력해 주세요.';
-    else if (!form.elements.agree.checked) msg = '개인정보 수집·이용에 동의해 주세요.';
-    errEl.hidden = !msg;
-    errEl.textContent = msg;
-    if (!msg) toastEl.hidden = false;
+    if (!services.length) msg = '관심 서비스를 1개 이상 선택해 주세요.';
+    else if (!f.name.value.trim()) msg = '성함 및 직함을 입력해 주세요.';
+    else if (!f.tel.value.trim()) msg = '연락처를 입력해 주세요.';
+    else if (!f.email.value.trim() || !f.email.checkValidity()) msg = '이메일 주소를 올바르게 입력해 주세요.';
+    else if (!f.agree.checked) msg = '개인정보 수집·이용에 동의해 주세요.';
+    showFormError(msg);
+    if (msg) return;
+
+    submitBtn.disabled = true;
+    postJson('/api/lead', {
+      services: services,
+      state: f.state.value,
+      name: f.name.value,
+      company: f.office.value,
+      phone: f.tel.value,
+      email: f.email.value,
+      message: f.message.value,
+      agree: f.agree.checked,
+      website: f.website.value
+    }).then(function (r) {
+      if (r.ok) {
+        form.reset();
+        toastEl.hidden = false;
+      } else {
+        showFormError(r.data.error || '접수 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+      }
+    }).catch(function () {
+      showFormError('네트워크 오류로 접수하지 못했습니다. 잠시 후 다시 시도해 주세요.');
+    }).then(function () {
+      submitBtn.disabled = false;
+    });
+  });
+
+  // ---------- 상담 챗봇 ----------
+  var chatLaunch = document.getElementById('chat-launch');
+  var chatPanel = document.getElementById('chat-panel');
+  var chatLog = document.getElementById('chat-log');
+  var chatForm = document.getElementById('chat-form');
+  var chatInput = document.getElementById('chat-input');
+  var chatSend = document.getElementById('chat-send');
+  var chatSuggest = document.getElementById('chat-suggest');
+  var chatHistory = [];
+  var chatBusy = false;
+  var SUGGESTIONS = ['어떤 서비스가 있나요?', '쇼츠 편집 가격이 얼마인가요?', '제작 중 취소하면 환불되나요?', '수정은 몇 번까지 되나요?'];
+
+  function newId() {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0;
+      return (c === 'x' ? r : (r & 3 | 8)).toString(16);
+    });
+  }
+  function sessionId() {
+    var id = null;
+    try { id = sessionStorage.getItem('lab-chat-session'); } catch (e) {}
+    if (!id) {
+      id = newId();
+      try { sessionStorage.setItem('lab-chat-session', id); } catch (e) {}
+    }
+    return id;
+  }
+  var chatSession = sessionId();
+
+  function addMsg(kind, text, sources) {
+    var m = el('div', 'msg msg-' + kind, text);
+    if (sources && sources.length) {
+      var box = el('div', 'msg-src');
+      sources.forEach(function (s) {
+        var parts = s.split('#');
+        box.appendChild(el('span', 'chip', parts[0] === 'faq.md' ? parts[1] : (parts[1] || parts[0])));
+      });
+      m.appendChild(box);
+    }
+    chatLog.appendChild(m);
+    chatLog.scrollTop = chatLog.scrollHeight;
+    return m;
+  }
+
+  function renderSuggestions() {
+    chatSuggest.textContent = '';
+    SUGGESTIONS.forEach(function (q) {
+      var b = el('button', 'chip filter', q);
+      b.type = 'button';
+      b.addEventListener('click', function () { ask(q); });
+      chatSuggest.appendChild(b);
+    });
+  }
+
+  function ask(text) {
+    text = text.trim();
+    if (!text || chatBusy) return;
+    chatBusy = true;
+    chatSend.disabled = true;
+    chatSuggest.textContent = '';
+    chatInput.value = '';
+    addMsg('user', text);
+    var wait = addMsg('bot msg-wait', '답변을 준비하고 있습니다…');
+    postJson('/api/chat', { session_id: chatSession, message: text, history: chatHistory.slice(-6) })
+      .then(function (r) {
+        wait.remove();
+        if (r.ok && r.data.answer) {
+          addMsg('bot', r.data.answer, r.data.sources);
+          chatHistory.push({ role: 'user', content: text }, { role: 'assistant', content: r.data.answer });
+        } else {
+          addMsg('error', r.data.error || '답변을 받지 못했습니다. 잠시 후 다시 시도해 주세요.');
+        }
+      })
+      .catch(function () {
+        wait.remove();
+        addMsg('error', '네트워크 오류로 답변을 받지 못했습니다. 잠시 후 다시 시도해 주세요.');
+      })
+      .then(function () {
+        chatBusy = false;
+        chatSend.disabled = false;
+        chatInput.focus();
+      });
+  }
+
+  function openChat(open) {
+    chatPanel.hidden = !open;
+    chatLaunch.hidden = open;
+    chatLaunch.setAttribute('aria-expanded', String(open));
+    if (open) {
+      if (!chatLog.children.length) {
+        addMsg('bot', '안녕하세요, 분양LAB 챗봇입니다. 서비스, 가격, 진행 절차에 대해 물어보세요. 견적이 필요하시면 아래 상담 신청 양식을 이용해 주세요.');
+        renderSuggestions();
+      }
+      chatInput.focus();
+    } else {
+      chatLaunch.focus();
+    }
+  }
+
+  chatLaunch.addEventListener('click', function () { openChat(true); });
+  document.getElementById('chat-close').addEventListener('click', function () { openChat(false); });
+  chatPanel.addEventListener('keydown', function (e) { if (e.key === 'Escape') openChat(false); });
+  chatForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    ask(chatInput.value);
   });
 
   // ---------- 현재 섹션 내비게이션 표시 ----------

@@ -1,7 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "node site/build-faq.js",
+  "buildCommand": "npm run build",
   "outputDirectory": "site",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "functions": {
+    "api/*.js": { "maxDuration": 60 }
+  }
 }

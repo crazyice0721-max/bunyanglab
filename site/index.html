@@ -541,12 +541,13 @@
           <div class="field"><label for="f-mail">이메일 주소 * (견적서 수신용)</label><input class="input" id="f-mail" name="email" type="email" placeholder="name@example.com" required></div>
         </div>
         <div class="field"><label for="f-msg">문의 내용 및 희망 착수 시점</label><textarea class="input" id="f-msg" name="message" rows="3" placeholder="매물 유형, 보유하신 자료(사진·영상), 희망 일정을 간략히 남겨 주세요."></textarea></div>
-        <label class="agree"><input type="checkbox" name="agree" required><span>상담 목적의 개인정보 수집·이용에 동의합니다.</span></label>
+        <div class="hp" aria-hidden="true"><label for="f-website">이 칸은 비워 두세요</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <label class="agree"><input type="checkbox" name="agree" required><span>상담 안내를 위한 개인정보(성함, 연락처, 이메일, 상호명) 수집·이용에 동의합니다. 입력하신 정보는 상담과 견적 안내에만 사용합니다.</span></label>
         <button class="btn btn-accent btn-lg btn-block" type="submit">상담 신청 및 견적서 요청 <span class="material-symbols-outlined" aria-hidden="true">send</span></button>
         <p class="b-sm muted" id="form-error" role="alert" hidden style="color:var(--status-audit)"></p>
         <div class="toast" id="form-toast" role="status" hidden>
           <span class="material-symbols-outlined" style="font-size:22px;color:var(--status-verified)" aria-hidden="true">check_circle</span>
-          <div><p style="font-weight:700">입력 내용을 확인했습니다. (시안 화면)</p><p class="b-sm muted" style="margin-top:2px">이 페이지는 실습용 시안이어서 입력하신 내용이 실제로 전송되거나 저장되지 않습니다. 공식 상담 채널은 아직 확정되지 않았습니다.</p></div>
+          <div><p style="font-weight:700">상담 신청이 접수되었습니다.</p><p class="b-sm muted" style="margin-top:2px">남겨 주신 연락처로 견적과 착수 가능 일정을 안내해 드리겠습니다.</p></div>
         </div>
       </form>
     </div>
@@ -593,6 +594,27 @@
     </div>
   </div>
 </footer>
+
+<!-- 상담 챗봇 -->
+<button class="chat-launch" id="chat-launch" type="button" aria-expanded="false" aria-controls="chat-panel">
+  <span class="material-symbols-outlined" aria-hidden="true">forum</span><span>챗봇 상담</span>
+</button>
+<section class="chat-panel" id="chat-panel" aria-label="분양LAB 챗봇 상담" hidden>
+  <header class="chat-head">
+    <div>
+      <span class="label-caps" style="color:#5eead4">AI Assistant</span>
+      <h2 class="h-sm">분양LAB 챗봇 상담</h2>
+    </div>
+    <button class="chat-close" id="chat-close" type="button" aria-label="챗봇 닫기"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+  </header>
+  <div class="chat-log" id="chat-log" role="log" aria-live="polite"></div>
+  <div class="chat-suggest" id="chat-suggest"></div>
+  <form class="chat-form" id="chat-form">
+    <input class="input" id="chat-input" type="text" maxlength="500" placeholder="서비스, 가격, 일정을 물어보세요" autocomplete="off" aria-label="질문 입력">
+    <button class="btn btn-primary" id="chat-send" type="submit" aria-label="보내기"><span class="material-symbols-outlined" aria-hidden="true">send</span></button>
+  </form>
+  <p class="chat-note">AI가 안내 문서를 바탕으로 답하며 틀릴 수 있습니다. 가격·정책은 실습용 가상 정책입니다. 대화 내용은 저장되니 연락처 같은 개인정보는 입력하지 마세요.</p>
+</section>
 
 <script src="faq-data.js"></script>
 <script src="app.js"></script>
