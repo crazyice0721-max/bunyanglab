@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "status-audit": "#E11D48", "status-verified": "#059669", "on-tertiary": "#ffffff", "background": "#f8f9ff", "primary": "#000000", "on-primary-container": "#7c839b", "primary-fixed": "#dae2fd", "border-strong": "#CBD5E1", "surface-container-low": "#eff4ff", "surface-container": "#e5eeff", "inverse-on-surface": "#eaf1ff", "tertiary-container": "#00201d", "surface-variant": "#d3e4fe", "outline": "#76777d", "on-background": "#0b1c30", "on-secondary-fixed": "#001d31", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#004b73", "primary-container": "#131b2e", "navy-slate": "#1E293B", "secondary-fixed-dim": "#93ccff", "text-main": "#0F172A", "text-muted": "#64748B", "surface-container-high": "#dce9ff", "tertiary-fixed": "#89f5e7", "on-secondary-container": "#00476e", "canvas-bg": "#F8FAFC", "on-primary-fixed-variant": "#3f465c", "navy-deep": "#0F172A", "teal-lab": "#0D9488", "on-secondary": "#ffffff", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "inverse-surface": "#213145", "surface": "#f8f9ff", "on-error": "#ffffff", "on-surface-variant": "#45464d", "primary-fixed-dim": "#bec6e0", "inverse-primary": "#bec6e0", "surface-tint": "#565e74", "on-surface": "#0b1c30", "border-subtle": "#E2E8F0", "on-error-container": "#93000a", "tertiary-fixed-dim": "#6bd8cb", "secondary": "#006398", "on-primary-fixed": "#131b2e", "outline-variant": "#c6c6cd", "surface-bright": "#f8f9ff", "on-primary": "#ffffff", "tertiary": "#000000", "surface-container-highest": "#d3e4fe", "on-tertiary-fixed": "#00201d", "on-tertiary-container": "#0c9488", "on-tertiary-fixed-variant": "#005049", "blue-signal": "#0284C7", "secondary-container": "#5bb8fe", "surface-card": "#FFFFFF", "secondary-fixed": "#cce5ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-mobile": "1rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "margin": "3rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "headline-sm": ["Inter"], "headline-lg": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Inter"], "label-caps": ["Inter"], "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"], "label-code": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "headline-xl-mobile": ["30px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "headline-md": ["22px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}], "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700"}], "headline-lg-mobile": ["24px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}], "label-code": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400"}] } } } };</script></head><body class="bg-background font-body-md text-text-main antialiased selection:bg-secondary-fixed selection:text-navy-deep"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" data-path="overview" href="#"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-navy-deep text-on-primary font-label-caps text-label-caps">LAB</span><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-navy-deep tracking-tight leading-none">분양LAB</span><span class="font-label-caps text-label-caps text-text-muted mt-0.5">BUNYANG RESEARCH LAB</span></div></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-navy-deep font-semibold bg-surface-container-low px-space-sm py-1.5 rounded-lg"><a class="font-body-md text-body-md text-text-muted hover:text-navy-deep transition-colors" data-path="services" href="#">서비스 소개</a><a class="font-body-md text-body-md text-text-muted hover:text-navy-deep transition-colors" data-path="process" href="#">프로세스</a><a class="font-body-md text-body-md text-text-muted hover:text-navy-deep transition-colors" data-path="advantages" href="#">차별화 강점</a><a class="font-body-md text-body-md text-text-muted hover:text-navy-deep transition-colors" data-path="client-segments" href="#">고객 유형</a><a class="font-body-md text-body-md text-text-muted hover:text-navy-deep transition-colors" data-path="consultation-inquiry" href="#">문의/상담 신청</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center px-space-md py-2 rounded-lg bg-navy-deep text-on-primary font-body-sm text-body-sm hover:bg-navy-slate transition-colors shadow-sm" data-path="consultation-inquiry" href="#">상담 신청하기</a><div class="pl-space-xs border-l border-border-subtle"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-subtle" src="https://lh3.googleusercontent.com/aida/AEtjO1UMkbbEhzrIhVcSiYioHMYmBRYVRYSdt2gYQgoOmU2nV78Lgi47S3i4dcu0KsS97YPXLGn7tbH917OxNe74YS0dVYE6HArsP78G5Uyz-U5h9yxhI5nhF-ZQzvkRcXBRm5n6KAf-9WGvkkNVzdg4-KbkeU5BabHsyavnjKL0W9xUOjtwDNlsg4_KQl716X-FK0MTNGjVuPK7zcRbur7jwO1key0W7RGZkyZnTU3HydTmhiiNhuuP7sn0yBI"/></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO SECTION -->
+<section class="w-full relative overflow-hidden bg-canvas-bg py-space-xl md:py-24">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Left Content -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Research Taxonomy Tag -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-teal-lab/10 text-teal-lab font-label-code text-label-code">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-lab animate-pulse"></span>
+              EMPIRICAL RESEARCH LAB
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container text-navy-slate font-label-code text-label-code">
+              SPEC-2024.B2B
+            </span>
+</div>
+<!-- Main Title -->
+<div class="flex flex-col gap-2">
+<p class="font-headline-sm text-headline-sm text-blue-signal font-semibold tracking-wide">
+              좋은 분양을 연구합니다
+            </p>
+<h1 class="font-headline-xl text-headline-xl text-navy-deep tracking-tight">
+              부동산 실무를 아는<br/>
+              콘텐츠 제작 파트너, <span class="text-teal-lab underline decoration-teal-lab/30 underline-offset-8">분양LAB</span>
+</h1>
+</div>
+<!-- Subtitle -->
+<p class="font-body-lg text-body-lg text-text-muted leading-relaxed max-w-xl">
+            현장과 공적 장부 자료를 먼저 꼼꼼히 확인하고, 중개 실무 흐름에 맞는 정직한 영상과 글로 옮깁니다. 허위 마케팅 수식어가 아닌 정확한 팩트로 가치를 전달합니다.
+          </p>
+<!-- Core Principle Badges -->
+<div class="flex flex-wrap gap-2 pt-2">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-card shadow-sm">
+<span class="material-symbols-outlined text-teal-lab text-[18px]">verified</span>
+<span class="font-label-code text-label-code text-navy-deep">정보의 정확성 (Fact-Checked)</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-card shadow-sm">
+<span class="material-symbols-outlined text-blue-signal text-[18px]">architecture</span>
+<span class="font-label-code text-label-code text-navy-deep">실무 중심 제작 (Field-Oriented)</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-card shadow-sm">
+<span class="material-symbols-outlined text-navy-slate text-[18px]">visibility</span>
+<span class="font-label-code text-label-code text-navy-deep">투명한 업무 범위 (Transparent Scope)</span>
+</div>
+</div>
+<!-- CTA Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm pt-4">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded bg-navy-deep text-on-primary font-body-md text-body-md hover:bg-navy-slate transition-all shadow-md" href="#inquiry-section">
+<span>1:1 전담 상담 신청</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center px-6 py-3 rounded bg-surface-card text-navy-deep font-body-md text-body-md hover:bg-surface-container transition-all shadow-sm" href="#services-section">
+              표준 연구 서비스 6종 보기
+            </a>
+</div>
+<!-- Transparency Notice Box -->
+<div class="mt-4 p-4 rounded bg-surface-container-low shadow-sm flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-signal text-[20px] shrink-0 mt-0.5">policy</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-blue-signal uppercase">LAB TRANSPARENCY NOTICE</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-0.5 leading-snug">
+                분양LAB은 <strong>조회수나 수익을 과장해 약속하지 않습니다.</strong> 사전에 합의된 데이터 규격 준수와 철저한 공적 장부 대조 검증만을 약속합니다.
+              </p>
+</div>
+</div>
+</div>
+<!-- Right Visual Mosaic -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="relative bg-surface-card p-space-md rounded-xl shadow-md">
+<!-- Header bar of mock dashboard -->
+<div class="flex items-center justify-between pb-3 bg-surface-container-low -mx-4 -mt-4 px-4 pt-3 rounded-t-xl mb-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-audit"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-status-verified"></span>
+<span class="font-label-code text-label-code text-text-muted ml-2">SPEC: BUNYANG-AUDIT-v2</span>
+</div>
+<span class="font-label-caps text-label-caps text-status-verified flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 1인 대표 직접 감수
+              </span>
+</div>
+<!-- Image preview of architectural blueprint analysis -->
+<div class="relative rounded-lg overflow-hidden h-52 mb-4 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A clean top-down architectural blueprint inspection view on a modern architect studio desk with precision measurement tools, digital tablet displaying urban real estate parcel boundaries, clean navy slate tone lighting, highly professional architectural verification context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCavtkaUMEr1GHM4TYJ1wutIgZ829tP8YB-NfVUMs5HBQc_eh5hJxzMTQa4EyUsqP81dCvnXs6gDH8dj37a508pN3EUa6FHsemhihy76DlhMnVQ-wIUe9T9xRXOAf-Pn00LLntDAbJ9uZi533p_ASqcA5WffVu2uGnZiIpS93xOLuq9SWb3pFzCJ899LINtkLuIpGBQX6fVJd6zRSRN6-d1P-UOCXIlGv91aBDeNo5NOpXqW1LI5XTuig"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent flex items-end p-4">
+<div class="text-on-primary">
+<p class="font-label-caps text-label-caps tracking-widest text-teal-fixed">현장 실측 및 등본 대조</p>
+<p class="font-headline-sm text-headline-sm leading-tight">건축물대장 · 토지이용계획원 대조 필터링</p>
+</div>
+</div>
+</div>
+<!-- Mini verification checklist -->
+<div class="space-y-2">
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-verified text-[18px]">task_alt</span>
+<span class="font-body-sm text-body-sm text-navy-deep">허위과장 광고 문구 자체 필터링</span>
+</div>
+<span class="font-label-code text-label-code text-status-verified font-semibold">100% 준수</span>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-verified text-[18px]">task_alt</span>
+<span class="font-body-sm text-body-sm text-navy-deep">1:1 대표 직접 전담 (외주 재하청 0건)</span>
+</div>
+<span class="font-label-code text-label-code text-status-verified font-semibold">대표 직할</span>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-verified text-[18px]">task_alt</span>
+<span class="font-body-sm text-body-sm text-navy-deep">업무 범위(R&R) 투명 견적서 제공</span>
+</div>
+<span class="font-label-code text-label-code text-status-verified font-semibold">사전 고지</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: WHY BUNYANG LAB & COMPARISON -->
+<section class="w-full bg-surface-container-lowest py-space-xl">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<span class="font-label-caps text-label-caps text-teal-lab uppercase tracking-widest">REALITY & DIAGNOSIS</span>
+<h2 class="font-headline-lg text-headline-lg text-navy-deep mt-1">
+            현실적인 문제와 분양LAB의 해결책
+          </h2>
+<p class="font-body-md text-body-md text-text-muted mt-2 max-w-2xl">
+            많은 공인중개사와 분양 실무진이 비전문 영상 외주나 시간 부족으로 어려움을 겪습니다. 분양LAB은 실무자가 직접 겪는 병목 현상을 정확한 프로세스로 해결합니다.
+          </p>
+</div>
+<span class="font-label-code text-label-code text-text-muted self-start md:self-end">ISSUE REF: PROB-01~04</span>
+</div>
+<!-- Problem vs Solution 4-Card Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Problem 1 -->
+<div class="bg-canvas-bg p-space-md rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-code text-label-code text-status-audit bg-status-audit/10 px-2 py-0.5 rounded">PROBLEM 01</span>
+<span class="material-symbols-outlined text-status-audit text-[20px]">hourglass_disabled</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">제작 시간의 절대적 부족</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4 leading-relaxed">
+              고객 미팅, 권리분석, 현장 안내로 하루가 빠듯해 유튜브 촬영과 블로그 포스팅을 지속하기 어렵습니다.
+            </p>
+</div>
+<div class="p-3 bg-surface-card rounded-lg shadow-sm">
+<span class="font-label-caps text-label-caps text-teal-lab font-semibold">LAB SOLUTION</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-1 font-medium">
+              표준 템플릿과 숏폼 패키지로 현장 사진·원고만 전달하면 즉시 원스톱 제작 완료
+            </p>
+</div>
+</div>
+<!-- Problem 2 -->
+<div class="bg-canvas-bg p-space-md rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-code text-label-code text-status-audit bg-status-audit/10 px-2 py-0.5 rounded">PROBLEM 02</span>
+<span class="material-symbols-outlined text-status-audit text-[20px]">help_center</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">채널 개설의 막막함</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4 leading-relaxed">
+              채널 아트, 카테고리 구성, 검색 최적화 등 기술적 초기 세팅 단계에서 시간과 에너지가 소모됩니다.
+            </p>
+</div>
+<div class="p-3 bg-surface-card rounded-lg shadow-sm">
+<span class="font-label-caps text-label-caps text-teal-lab font-semibold">LAB SOLUTION</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-1 font-medium">
+              부동산 규격에 최적화된 유튜브/블로그 세팅 패키지와 상세 실무 매뉴얼 동시 제공
+            </p>
+</div>
+</div>
+<!-- Problem 3 -->
+<div class="bg-canvas-bg p-space-md rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-code text-label-code text-status-audit bg-status-audit/10 px-2 py-0.5 rounded">PROBLEM 03</span>
+<span class="material-symbols-outlined text-status-audit text-[20px]">gavel</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">잘못된 매물 표기 오류</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4 leading-relaxed">
+              부동산을 모르는 일반 외주 업체에 맡기면 건축물 용도, 층수, 면적 등 필수 표기사항 오류가 빈번합니다.
+            </p>
+</div>
+<div class="p-3 bg-surface-card rounded-lg shadow-sm">
+<span class="font-label-caps text-label-caps text-teal-lab font-semibold">LAB SOLUTION</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-1 font-medium">
+              공인중개사법 표시·광고 명시사항 가이드라인에 맞춘 자체 정보 확인서 대조 검수
+            </p>
+</div>
+</div>
+<!-- Problem 4 -->
+<div class="bg-canvas-bg p-space-md rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-code text-label-code text-status-audit bg-status-audit/10 px-2 py-0.5 rounded">PROBLEM 04</span>
+<span class="material-symbols-outlined text-status-audit text-[20px]">contract_delete</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">거래 완료 후 방치된 매물</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4 leading-relaxed">
+              계약 체결 이후에도 영상이나 게시물이 그대로 남아 허위매물 신고 위험 및 고객 혼선이 발생합니다.
+            </p>
+</div>
+<div class="p-3 bg-surface-card rounded-lg shadow-sm">
+<span class="font-label-caps text-label-caps text-teal-lab font-semibold">LAB SOLUTION</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-1 font-medium">
+              월 운영 관리 및 알림을 통한 신속한 ‘거래완료’ 썸네일 전환 및 비공개 처리 프로토콜
+            </p>
+</div>
+</div>
+</div>
+<!-- Comparison Matrix Table -->
+<div class="bg-surface-card rounded-xl shadow-md overflow-hidden">
+<div class="p-space-md bg-navy-deep text-on-primary flex flex-col md:flex-row md:items-center justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-teal-fixed uppercase">TECHNICAL AUDIT MATRIX</span>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-primary">일반 영상·디자인 외주 업체 vs 분양LAB</h3>
+</div>
+<span class="font-label-code text-label-code text-surface-container bg-navy-slate px-3 py-1 rounded">COMPARE SPEC 2024</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-text-muted font-label-caps text-label-caps uppercase">
+<th class="p-4 w-1/4">비교 항목</th>
+<th class="p-4 w-3/8 text-navy-slate">일반 외주/프리랜서 업체</th>
+<th class="p-4 w-3/8 text-teal-lab bg-teal-lab/5 font-semibold">분양LAB (연구 기반 전담제)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm">
+<tr class="hover:bg-canvas-bg transition-colors">
+<td class="p-4 font-semibold text-navy-deep flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-blue-signal">rule</span>
+                  업무 범위 및 견적
+                </td>
+<td class="p-4 text-text-muted">애매한 작업 범위, 추가 수정 시 잦은 추가 요금 분쟁</td>
+<td class="p-4 text-navy-deep bg-teal-lab/5 font-medium">착수 전 포함/제외 항목이 명시된 투명 견적서 확정</td>
+</tr>
+<tr class="hover:bg-canvas-bg transition-colors">
+<td class="p-4 font-semibold text-navy-deep flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-blue-signal">fact_check</span>
+                  부동산 정보 확인
+                </td>
+<td class="p-4 text-text-muted">제공된 원고를 단순히 기계적으로 자막화, 오타 무검증</td>
+<td class="p-4 text-navy-deep bg-teal-lab/5 font-medium">대장·등본 등 공적 장부와 기재사항 1:1 대조 사전 검증</td>
+</tr>
+<tr class="hover:bg-canvas-bg transition-colors">
+<td class="p-4 font-semibold text-navy-deep flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-blue-signal">verified_user</span>
+                  광고 표현 기준 준수
+                </td>
+<td class="p-4 text-text-muted">‘무조건 대박’, ‘확정 수익’ 등 법적 위험이 높은 자극적 카피 사용</td>
+<td class="p-4 text-navy-deep bg-teal-lab/5 font-medium">공인중개사법 및 과장 광고 방지 준수, 신뢰성 중심 카피라이팅</td>
+</tr>
+<tr class="hover:bg-canvas-bg transition-colors">
+<td class="p-4 font-semibold text-navy-deep flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-blue-signal">sync_alt</span>
+                  원소스 멀티유즈
+                </td>
+<td class="p-4 text-text-muted">영상 따로, 블로그 따로 개별 발주로 비용 이중 지출</td>
+<td class="p-4 text-navy-deep bg-teal-lab/5 font-medium">1회 수령 자료로 숏폼+원고+카드형 이미지 패키지 제작 연계</td>
+</tr>
+<tr class="hover:bg-canvas-bg transition-colors">
+<td class="p-4 font-semibold text-navy-deep flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-blue-signal">support_agent</span>
+                  운영 및 사후 관리
+                </td>
+<td class="p-4 text-text-muted">납품 완료 즉시 소통 종료, 거래 완료 후 매물 방치</td>
+<td class="p-4 text-navy-deep bg-teal-lab/5 font-medium">월 운영 채널 지속 모니터링 및 거래완료 표기 전환 신속 대응</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: CORE SERVICES 6 (SVC-01 ~ SVC-06) -->
+<section class="w-full bg-canvas-bg py-space-xl" id="services-section">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+<!-- Section Title -->
+<div class="flex flex-col gap-2 mb-space-xl">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-navy-deep text-on-primary font-label-code text-label-code">SERVICE ARCHITECTURE</span>
+<span class="font-label-caps text-label-caps text-text-muted">DELIVERY TIMELINE D-1 ~ D-7</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-navy-deep">분양LAB 표준 연구 서비스 6종</h2>
+<p class="font-body-md text-body-md text-text-muted max-w-2xl">
+          모든 서비스는 포함 내역과 제외 작업이 사전에 명확히 규정되어 있어 예측 가능하고 안정적인 실무를 지원합니다.
+        </p>
+</div>
+<!-- Service Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- SVC-01 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-surface-container">
+<span class="font-label-code text-label-code text-blue-signal font-bold bg-surface-container-low px-2 py-0.5 rounded">SVC-01</span>
+<span class="font-label-caps text-label-caps text-teal-lab">소요 기간: D+3일 이내</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-1">유튜브 영상 제작</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">쇼츠(세로) 및 일반 가로 영상 전문 편집</p>
+<div class="mb-4">
+<span class="font-label-caps text-label-caps text-text-muted uppercase">추천 대상</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-0.5">현장 촬영본은 있으나 편집 시간이 부족한 중개사</p>
+</div>
+<!-- In/Out Specs -->
+<div class="space-y-2 mb-4 text-body-sm">
+<div class="p-2.5 rounded bg-surface-container-low">
+<span class="font-label-code text-label-code text-teal-lab font-semibold block mb-1">✓ 포함 작업</span>
+<p class="text-navy-slate">컷 편집, 자막(핵심 수치 강조), BGM, 기본 색보정, 썸네일 1종</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container">
+<span class="font-label-code text-label-code text-status-audit font-semibold block mb-1">✕ 제외 작업</span>
+<p class="text-text-muted">현장 출장 촬영 (현장 원본 영상 고객 제공 원칙), 3D 모션그래픽</p>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-text-muted">수정 범위: 2회 무료 보완</span>
+<a class="text-blue-signal font-label-code text-label-code font-bold hover:underline flex items-center gap-1" href="#inquiry-section">상담 선택 <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- SVC-02 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-surface-container">
+<span class="font-label-code text-label-code text-blue-signal font-bold bg-surface-container-low px-2 py-0.5 rounded">SVC-02</span>
+<span class="font-label-caps text-label-caps text-teal-lab">소요 기간: D+4일 이내</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-1">부동산 매물 홍보대행</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">원소스 멀티유즈 올인원 매물 홍보 패키지</p>
+<div class="mb-4">
+<span class="font-label-caps text-label-caps text-text-muted uppercase">추천 대상</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-0.5">단일 매물을 블로그, 유튜브, 모바일에 동시 전파할 때</p>
+</div>
+<!-- In/Out Specs -->
+<div class="space-y-2 mb-4 text-body-sm">
+<div class="p-2.5 rounded bg-surface-container-low">
+<span class="font-label-code text-label-code text-teal-lab font-semibold block mb-1">✓ 포함 작업</span>
+<p class="text-navy-slate">쇼츠 1편 + 블로그 포스팅 원고(1,500자 내외) + 카드뉴스형 이미지 4장</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container">
+<span class="font-label-code text-label-code text-status-audit font-semibold block mb-1">✕ 제외 작업</span>
+<p class="text-text-muted">유료 광고 집행비(광고비 실비 별도), 현장 방문 임장 대행</p>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-text-muted">패키지 특화 솔루션</span>
+<a class="text-blue-signal font-label-code text-label-code font-bold hover:underline flex items-center gap-1" href="#inquiry-section">상담 선택 <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- SVC-03 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-surface-container">
+<span class="font-label-code text-label-code text-blue-signal font-bold bg-surface-container-low px-2 py-0.5 rounded">SVC-03</span>
+<span class="font-label-caps text-label-caps text-teal-lab">소요 기간: D+5~7일</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-1">부동산사무실 컨설팅</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">개업 준비 및 온·오프라인 실무 도구 종합 구축</p>
+<div class="mb-4">
+<span class="font-label-caps text-label-caps text-text-muted uppercase">추천 대상</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-0.5">신규 개업 공인중개사 및 디지털 업무 환경 전환 희망 사무소</p>
+</div>
+<!-- In/Out Specs -->
+<div class="space-y-2 mb-4 text-body-sm">
+<div class="p-2.5 rounded bg-surface-container-low">
+<span class="font-label-code text-label-code text-teal-lab font-semibold block mb-1">✓ 포함 작업</span>
+<p class="text-navy-slate">명함/서식 템플릿, 매물장 스프레드시트 세팅, 매체별 세팅 가이드</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container">
+<span class="font-label-code text-label-code text-status-audit font-semibold block mb-1">✕ 제외 작업</span>
+<p class="text-text-muted">간판/인테리어 시공비, 중개업 인허가 행정대행, 소프트웨어 구매비</p>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-text-muted">대표 1:1 컨설팅 제공</span>
+<a class="text-blue-signal font-label-code text-label-code font-bold hover:underline flex items-center gap-1" href="#inquiry-section">상담 선택 <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- SVC-04 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-surface-container">
+<span class="font-label-code text-label-code text-blue-signal font-bold bg-surface-container-low px-2 py-0.5 rounded">SVC-04</span>
+<span class="font-label-caps text-label-caps text-teal-lab">소요 기간: D+3일 이내</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-1">네이버 블로그 초기 설정</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">카테고리, 상단 타이틀, 포스팅 템플릿 표준화</p>
+<div class="mb-4">
+<span class="font-label-caps text-label-caps text-text-muted uppercase">추천 대상</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-0.5">블로그 개설 후 글쓰기 양식이 없어 작성을 미루던 분</p>
+</div>
+<!-- In/Out Specs -->
+<div class="space-y-2 mb-4 text-body-sm">
+<div class="p-2.5 rounded bg-surface-container-low">
+<span class="font-label-code text-label-code text-teal-lab font-semibold block mb-1">✓ 포함 작업</span>
+<p class="text-navy-slate">스킨/타이틀 디자인, 카테고리 기획, 글 양식 3종, 샘플 글 1편</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container">
+<span class="font-label-code text-label-code text-status-audit font-semibold block mb-1">✕ 제외 작업</span>
+<p class="text-text-muted">어뷰징 트래픽 유입, 비정상 검색 상위노출 조작 보장 행위 일체</p>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-text-muted">운영 매뉴얼 PDF 동봉</span>
+<a class="text-blue-signal font-label-code text-label-code font-bold hover:underline flex items-center gap-1" href="#inquiry-section">상담 선택 <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- SVC-05 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-surface-container">
+<span class="font-label-code text-label-code text-blue-signal font-bold bg-surface-container-low px-2 py-0.5 rounded">SVC-05</span>
+<span class="font-label-caps text-label-caps text-teal-lab">소요 기간: D+3일 이내</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-1">유튜브 채널 초기 설정</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">채널아트, 프로필, 썸네일 규격 템플릿 일원화</p>
+<div class="mb-4">
+<span class="font-label-caps text-label-caps text-text-muted uppercase">추천 대상</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-0.5">영상 촬영은 가능하나 채널 브랜딩 규격화가 필요한 분</p>
+</div>
+<!-- In/Out Specs -->
+<div class="space-y-2 mb-4 text-body-sm">
+<div class="p-2.5 rounded bg-surface-container-low">
+<span class="font-label-code text-label-code text-teal-lab font-semibold block mb-1">✓ 포함 작업</span>
+<p class="text-navy-slate">채널 배너/아이콘, 재생목록 구조 설계, 썸네일 PSD/Canva 템플릿</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container">
+<span class="font-label-code text-label-code text-status-audit font-semibold block mb-1">✕ 제외 작업</span>
+<p class="text-text-muted">구독자수 강제 유입 프로그램 사용, 저작권 침해 음원 납품</p>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-text-muted">가이드북 기본 제공</span>
+<a class="text-blue-signal font-label-code text-label-code font-bold hover:underline flex items-center gap-1" href="#inquiry-section">상담 선택 <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- SVC-06 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-surface-container">
+<span class="font-label-code text-label-code text-blue-signal font-bold bg-surface-container-low px-2 py-0.5 rounded">SVC-06</span>
+<span class="font-label-caps text-label-caps text-teal-lab">소요 기간: 월간 정기 단위</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-1">블로그·유튜브 월 운영관리</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">정기 콘텐츠 제작, 고객 사전승인 후 게시, 월간 리포트</p>
+<div class="mb-4">
+<span class="font-label-caps text-label-caps text-text-muted uppercase">추천 대상</span>
+<p class="font-body-sm text-body-sm text-navy-slate mt-0.5">매체 관리를 정기 외주화하여 본업인 중개 영업에 집중할 사무소</p>
+</div>
+<!-- In/Out Specs -->
+<div class="space-y-2 mb-4 text-body-sm">
+<div class="p-2.5 rounded bg-surface-container-low">
+<span class="font-label-code text-label-code text-teal-lab font-semibold block mb-1">✓ 포함 작업</span>
+<p class="text-navy-slate">월 계약 건수 정기 제작, 발행 전 원고 승인 프로세스, 거래완료 처리</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container">
+<span class="font-label-code text-label-code text-status-audit font-semibold block mb-1">✕ 제외 작업</span>
+<p class="text-text-muted">실시간 댓글 중개 문의 직접 응대(공인중개사 본인 응대 필수)</p>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-text-muted">월간 성과 보고서 발행</span>
+<a class="text-blue-signal font-label-code text-label-code font-bold hover:underline flex items-center gap-1" href="#inquiry-section">상담 선택 <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: CLIENT SEGMENTS -->
+<section class="w-full bg-surface-container-lowest py-space-xl">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+<div class="flex flex-col gap-2 mb-space-xl text-center items-center">
+<span class="font-label-caps text-label-caps text-teal-lab uppercase tracking-wider">TARGETED PACKAGES</span>
+<h2 class="font-headline-lg text-headline-lg text-navy-deep">고객 유형별 맞춤 솔루션 매칭</h2>
+<p class="font-body-md text-body-md text-text-muted max-w-xl">
+          현재 귀하의 사업 운영 국면에 가장 유효한 서비스 조합을 추천합니다. 불필요한 과잉 발주를 지양합니다.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Segment 1 -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-navy-deep text-on-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">신규 개업 공인중개사</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4 leading-relaxed">
+              사무실 오픈과 동시에 온·오프라인 채널 기초 세팅을 단번에 정립해야 하는 대표님
+            </p>
+</div>
+<div class="pt-4 border-t border-surface-container">
+<span class="font-label-caps text-label-caps text-text-muted uppercase block mb-2">추천 조합</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-code text-label-code bg-surface-container-low text-blue-signal px-2 py-1 rounded">SVC-03 컨설팅</span>
+<span class="font-label-code text-label-code bg-surface-container-low text-blue-signal px-2 py-1 rounded">SVC-04 블로그 세팅</span>
+<span class="font-label-code text-label-code bg-surface-container-low text-blue-signal px-2 py-1 rounded">SVC-05 유튜브 세팅</span>
+</div>
+</div>
+</div>
+<!-- Segment 2 -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-teal-lab text-on-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">기존 사무소 운영자</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4 leading-relaxed">
+              기존 사무소의 산발적인 홍보 채널을 리뉴얼하고 정기적인 콘텐츠 운영 체계를 안착시키려는 분
+            </p>
+</div>
+<div class="pt-4 border-t border-surface-container">
+<span class="font-label-caps text-label-caps text-text-muted uppercase block mb-2">추천 조합</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-code text-label-code bg-surface-container-low text-teal-lab px-2 py-1 rounded">SVC-03 사무소 개선</span>
+<span class="font-label-code text-label-code bg-surface-container-low text-teal-lab px-2 py-1 rounded">SVC-06 월 운영관리</span>
+</div>
+</div>
+</div>
+<!-- Segment 3 -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-blue-signal text-on-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">매물 홍보가 시급한 중개사</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4 leading-relaxed">
+              전속 매물이나 단독 분양 물건을 블로그, 숏폼 등 다양한 플랫폼에 신속하게 노출해야 하는 분
+            </p>
+</div>
+<div class="pt-4 border-t border-surface-container">
+<span class="font-label-caps text-label-caps text-text-muted uppercase block mb-2">추천 조합</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-code text-label-code bg-surface-container-low text-blue-signal px-2 py-1 rounded font-bold">SVC-02 매물 홍보대행</span>
+<span class="font-label-code text-label-code bg-surface-container-low text-text-muted px-2 py-1 rounded">원소스 패키지</span>
+</div>
+</div>
+</div>
+<!-- Segment 4 -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-navy-slate text-on-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">부동산 채널 시작 희망자</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4 leading-relaxed">
+              지역 부동산 정보, 청약 분석, 분양권 해설 콘텐츠 크리에이터로 입지를 다지고자 하는 분
+            </p>
+</div>
+<div class="pt-4 border-t border-surface-container">
+<span class="font-label-caps text-label-caps text-text-muted uppercase block mb-2">추천 조합</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-code text-label-code bg-surface-container-low text-navy-slate px-2 py-1 rounded">SVC-01 영상 제작</span>
+<span class="font-label-code text-label-code bg-surface-container-low text-navy-slate px-2 py-1 rounded">SVC-04 블로그 세팅</span>
+<span class="font-label-code text-label-code bg-surface-container-low text-navy-slate px-2 py-1 rounded">SVC-05 유튜브 세팅</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: 10-STEP TRANSPARENT PROCESS -->
+<section class="w-full bg-canvas-bg py-space-xl">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<span class="font-label-caps text-label-caps text-teal-lab uppercase tracking-widest">TRANSPARENT 10-STEP PROTOCOL</span>
+<h2 class="font-headline-lg text-headline-lg text-navy-deep mt-1">10단계 표준 진행 절차</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2 max-w-2xl">
+            자료 수령 후 공적 장부 대조부터 고객의 사전 승인 후 게시까지, 모든 단계는 투명하게 기록되고 검증됩니다.
+          </p>
+</div>
+<div class="p-3 bg-surface-card rounded-lg shadow-sm flex items-center gap-2 self-start md:self-end">
+<span class="material-symbols-outlined text-status-verified text-[20px]">security</span>
+<span class="font-body-sm text-body-sm text-navy-deep font-semibold">게시 전 사전 승인제 100% 시행</span>
+</div>
+</div>
+<!-- 10 Steps Interactive / Visual Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<!-- Step 1 -->
+<div class="bg-surface-card p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-code text-label-code text-blue-signal font-bold">STEP 01</span>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">초기 상담 접수</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+              온라인 폼 접수 후 현장 여건 및 제작 목적 기본 검토
+            </p>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted mt-3">1영업일 내 피드백</span>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-card p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-code text-label-code text-blue-signal font-bold">STEP 02</span>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">요구사항 분석</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+              대표가 직접 유선 또는 화상으로 매물 특성 및 타깃층 분석
+            </p>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted mt-3">1:1 대표 인터뷰</span>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-card p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-code text-label-code text-blue-signal font-bold">STEP 03</span>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">투명 견적서 발행</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+              산출물 규격, 수정 횟수, 포함/제외 범위가 명시된 표준 견적서
+            </p>
+</div>
+<span class="font-label-caps text-label-caps text-status-verified font-bold mt-3">추가금 분쟁 방지</span>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-card p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-code text-label-code text-blue-signal font-bold">STEP 04</span>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">계약 체결 & 착수</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+              전자 계약서 작성 및 납품 마감일(D-Day) 확정
+            </p>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted mt-3">전자계약 체결</span>
+</div>
+<!-- Step 5 -->
+<div class="bg-surface-card p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-code text-label-code text-blue-signal font-bold">STEP 05</span>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">기본 자료 수령</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+              매물 사진, 현장 영상, 건축물대장 및 등본 사본 안전 수령
+            </p>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted mt-3">보안 보관 준수</span>
+</div>
+<!-- Step 6 (Highlighted) -->
+<div class="bg-teal-lab/5 p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-teal-lab font-bold">STEP 06 (핵심)</span>
+<span class="material-symbols-outlined text-teal-lab text-[16px]">verified</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">제작 & 정보 대조</h4>
+<p class="font-body-sm text-body-sm text-navy-slate mt-1 leading-relaxed">
+              영상 편집 및 원고 작성 시 <strong>공적 장부와 기재사항 정밀 대조</strong>
+</p>
+</div>
+<span class="font-label-caps text-label-caps text-teal-lab font-semibold mt-3">팩트체크 검증 단계</span>
+</div>
+<!-- Step 7 -->
+<div class="bg-surface-card p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-code text-label-code text-blue-signal font-bold">STEP 07</span>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">1차 초안 검수</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+              고객 전용 비공개 링크로 초안 전달 및 피드백 청취
+            </p>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted mt-3">보안 링크 전송</span>
+</div>
+<!-- Step 8 -->
+<div class="bg-surface-card p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-code text-label-code text-blue-signal font-bold">STEP 08</span>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">수정 및 보완</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+              협의된 수정 범위(오탈자, 자막 크기 등)에 맞춘 신속 수정
+            </p>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted mt-3">정해진 횟수 준수</span>
+</div>
+<!-- Step 9 -->
+<div class="bg-surface-card p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-code text-label-code text-blue-signal font-bold">STEP 09</span>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">최종 고객 승인 & 납품</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+<strong>고객의 최종 게시 승인 완료 후</strong> 원본 파일 제공 또는 예약 발행
+            </p>
+</div>
+<span class="font-label-caps text-label-caps text-status-verified font-bold mt-3">사전 승인 원칙</span>
+</div>
+<!-- Step 10 -->
+<div class="bg-surface-card p-4 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-code text-label-code text-blue-signal font-bold">STEP 10</span>
+<h4 class="font-headline-sm text-headline-sm text-navy-deep mt-1">사후 관리 지원</h4>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+              거래 완료 매물 썸네일 전환, 법령 변경 모니터링 등 지속 케어
+            </p>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted mt-3">운영 안전성 보장</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: 1-PERSON SPECIALIST COMMITMENT -->
+<section class="w-full bg-surface-container-lowest py-space-xl">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+<div class="bg-navy-deep rounded-2xl p-space-md md:p-space-xl text-on-primary shadow-xl relative overflow-hidden">
+<!-- Background subtle glow -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-teal-lab/20 blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center relative z-10">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-teal-lab text-navy-deep font-label-code text-label-code font-bold">OPERATING PRINCIPLE</span>
+<span class="font-label-caps text-label-caps text-surface-container-high tracking-widest">SOLO EXPERT INTEGRITY</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-primary">
+              1인 전문 기업으로서의 정직한 약속
+            </h2>
+<p class="font-body-lg text-body-lg text-surface-container leading-relaxed">
+              분양LAB은 수십 명의 아르바이트생을 고용하여 대량 생산하는 박리다매 에이전시가 아닙니다. 부동산 실무 지식을 갖춘 대표가 처음 상담부터 마지막 팩트체크 검수까지 100% 직접 전담합니다.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-2">
+<div class="p-4 rounded-xl bg-navy-slate/80 shadow-inner flex flex-col gap-1.5">
+<span class="material-symbols-outlined text-teal-fixed text-[24px]">person_check</span>
+<span class="font-headline-sm text-headline-sm text-on-primary">대표 1:1 직접 소통</span>
+<p class="font-body-sm text-body-sm text-surface-container-high">
+                  영업사원과 작업자가 달라 생기는 소통 오류 및 담당자 교체가 일절 없습니다.
+                </p>
+</div>
+<div class="p-4 rounded-xl bg-navy-slate/80 shadow-inner flex flex-col gap-1.5">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">speed</span>
+<span class="font-headline-sm text-headline-sm text-on-primary">월 수주 프로젝트 제한</span>
+<p class="font-body-sm text-body-sm text-surface-container-high">
+                  품질 저하를 막기 위해 동시 진행 건수를 엄격히 제한하며 사전 착수 가능일을 고지합니다.
+                </p>
+</div>
+<div class="p-4 rounded-xl bg-navy-slate/80 shadow-inner flex flex-col gap-1.5">
+<span class="material-symbols-outlined text-status-audit text-[24px]">gavel</span>
+<span class="font-headline-sm text-headline-sm text-on-primary">명확한 R&R 고지</span>
+<p class="font-body-sm text-body-sm text-surface-container-high">
+                  법률 자문, 세무 상담, 중개 계약 체결 등 법적 비인가 영역은 엄격히 제외합니다.
+                </p>
+</div>
+</div>
+</div>
+<!-- Representative Profile Card -->
+<div class="lg:col-span-4 bg-surface-card text-navy-deep p-space-md rounded-xl shadow-lg flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-3 bg-surface-container ring-4 ring-teal-lab/20">
+<img class="w-full h-full object-cover" data-alt="High-resolution, distinguished editorial corporate portrait of an analytical male real estate research consultant in a modern tailored dark navy blazer, smiling with quiet confidence, clean minimal research laboratory studio backdrop, soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABCrkxWdmmb59-PdmJ3OCi7pnjs65CN1s3SRUkd1foIF23l_upCjiclYTKXhDSqGmqck3iN0BYx27r-LT9IPN03mNLILU2yVfryuOagjr_lFXlj5G9t4U4L7y9XnkJ_JuXVULwCh9Z9lijfkvE65jX8XiOLW6jDvD97cl49epvscr-tcw9p9w6Mc5QCe3GWfZMfv4OKixj455vHRYNT6rmQH48mcd4nGCCupmF1aLBwGuSIjUjdqFT9Q"/>
+</div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-md text-headline-md font-bold text-navy-deep">분양LAB 대표 연구원</h3>
+<span class="material-symbols-outlined text-teal-lab text-[18px]">verified</span>
+</div>
+<span class="font-label-code text-label-code text-blue-signal mt-0.5">DIRECTOR & PRINCIPAL RESEARCHER</span>
+<p class="font-body-sm text-body-sm text-text-muted mt-3 mb-4 leading-relaxed">
+              "부동산은 단 한 글자의 수치 오류로도 막대한 신뢰와 비용이 손실될 수 있습니다. 연구자의 시각으로 정확하게 검증하고 실무자의 언어로 담아내겠습니다."
+            </p>
+<div class="w-full p-2.5 rounded bg-surface-container-low flex items-center justify-between text-body-sm">
+<span class="text-text-muted font-label-caps text-label-caps">RESPONSIBILITY</span>
+<span class="font-semibold text-navy-deep">전 과정 직접 책임 감수</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: CONSULTATION & INQUIRY FORM (CONVERSION FOCUS) -->
+<section class="w-full bg-canvas-bg py-space-xl" id="inquiry-section">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Inquiry Information Left Side -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-teal-lab/10 text-teal-lab font-label-code text-label-code font-bold">DIRECT INQUIRY</span>
+<span class="font-label-caps text-label-caps text-text-muted">1영업일 이내 정직한 회신</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-navy-deep">
+            실무 맞춤형 견적 및<br/>
+            착수 일정 문의하기
+          </h2>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed">
+            필요하신 서비스와 현재 사업 상황을 남겨주시면, 대표가 직접 내용을 면밀히 분석한 후 <strong>착수 가능 일정과 투명한 맞춤 견적서</strong>를 1영업일 이내에 이메일 및 유선으로 안내해 드립니다.
+          </p>
+<div class="space-y-3 pt-2">
+<div class="flex items-start gap-3 p-3.5 rounded-lg bg-surface-card shadow-sm">
+<span class="material-symbols-outlined text-teal-lab text-[22px] shrink-0">event_available</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-navy-deep block">일정 과밀 시 사전 착수 대기 안내</span>
+<span class="font-body-sm text-body-sm text-text-muted">완성도를 유지하기 위해 정해진 수주 한도를 초과할 경우 일정이 순연될 수 있습니다.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded-lg bg-surface-card shadow-sm">
+<span class="material-symbols-outlined text-blue-signal text-[22px] shrink-0">lock</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-navy-deep block">상담 정보 보안 엄수</span>
+<span class="font-body-sm text-body-sm text-text-muted">제공해주신 매물 정보와 개인정보는 상담 및 견적 안내 목적 이외에 절대 사용되지 않습니다.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded-lg bg-surface-card shadow-sm">
+<span class="material-symbols-outlined text-navy-slate text-[22px] shrink-0">mark_email_read</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-navy-deep block">영업 전화 일절 없음</span>
+<span class="font-body-sm text-body-sm text-text-muted">요청하지 않은 추가 부가서비스나 일방적인 가입 권유 전화를 드리지 않습니다.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Inquiry Form Right Side -->
+<div class="lg:col-span-7 bg-surface-card p-space-md md:p-space-lg rounded-2xl shadow-lg">
+<form class="flex flex-col gap-space-md" id="lab-inquiry-form" onsubmit="event.preventDefault(); document.getElementById('inquiry-complete-toast').classList.remove('hidden');">
+<!-- Service Multi-Select Checkboxes -->
+<div class="flex flex-col gap-2">
+<label class="font-body-sm text-body-sm font-semibold text-navy-deep flex items-center justify-between">
+<span>1. 관심 서비스 선택 (복수 선택 가능) *</span>
+<span class="font-label-code text-label-code text-text-muted">필수 항목</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors">
+<input class="rounded text-navy-deep focus:ring-blue-signal w-4 h-4" name="services" type="checkbox" value="SVC-01"/>
+<span class="font-body-sm text-body-sm text-navy-slate"><strong class="font-label-code text-label-code text-blue-signal">SVC-01</strong> 유튜브 영상 제작</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors">
+<input class="rounded text-navy-deep focus:ring-blue-signal w-4 h-4" name="services" type="checkbox" value="SVC-02"/>
+<span class="font-body-sm text-body-sm text-navy-slate"><strong class="font-label-code text-label-code text-blue-signal">SVC-02</strong> 부동산 매물 홍보대행</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors">
+<input class="rounded text-navy-deep focus:ring-blue-signal w-4 h-4" name="services" type="checkbox" value="SVC-03"/>
+<span class="font-body-sm text-body-sm text-navy-slate"><strong class="font-label-code text-label-code text-blue-signal">SVC-03</strong> 부동산사무실 컨설팅</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors">
+<input class="rounded text-navy-deep focus:ring-blue-signal w-4 h-4" name="services" type="checkbox" value="SVC-04"/>
+<span class="font-body-sm text-body-sm text-navy-slate"><strong class="font-label-code text-label-code text-blue-signal">SVC-04</strong> 네이버 블로그 초기 설정</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors">
+<input class="rounded text-navy-deep focus:ring-blue-signal w-4 h-4" name="services" type="checkbox" value="SVC-05"/>
+<span class="font-body-sm text-body-sm text-navy-slate"><strong class="font-label-code text-label-code text-blue-signal">SVC-05</strong> 유튜브 채널 초기 설정</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors">
+<input class="rounded text-navy-deep focus:ring-blue-signal w-4 h-4" name="services" type="checkbox" value="SVC-06"/>
+<span class="font-body-sm text-body-sm text-navy-slate"><strong class="font-label-code text-label-code text-blue-signal">SVC-06</strong> 월간 운영관리 대행</span>
+</label>
+</div>
+</div>
+<!-- Current Situation Radio Buttons -->
+<div class="flex flex-col gap-2">
+<label class="font-body-sm text-body-sm font-semibold text-navy-deep">
+                2. 현재 사업 현황 및 상황 *
+              </label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors text-center justify-center">
+<input checked="" class="text-navy-deep focus:ring-blue-signal w-4 h-4" name="business_state" type="radio" value="opening"/>
+<span class="font-body-sm text-body-sm text-navy-slate">개업 준비 중</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors text-center justify-center">
+<input class="text-navy-deep focus:ring-blue-signal w-4 h-4" name="business_state" type="radio" value="operating"/>
+<span class="font-body-sm text-body-sm text-navy-slate">사무소 운영 중</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors text-center justify-center">
+<input class="text-navy-deep focus:ring-blue-signal w-4 h-4" name="business_state" type="radio" value="listing_urgent"/>
+<span class="font-body-sm text-body-sm text-navy-slate">보유 매물 홍보</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-canvas-bg hover:bg-surface-container cursor-pointer transition-colors text-center justify-center">
+<input class="text-navy-deep focus:ring-blue-signal w-4 h-4" name="business_state" type="radio" value="creator"/>
+<span class="font-body-sm text-body-sm text-navy-slate">채널 신규 개설</span>
+</label>
+</div>
+</div>
+<!-- Contact Inputs Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1.5">
+<label class="font-body-sm text-body-sm font-semibold text-navy-deep">성함 및 직함 *</label>
+<input class="w-full h-11 px-3 rounded bg-canvas-bg border-0 focus:ring-2 focus:ring-blue-signal font-body-sm text-body-sm text-navy-deep placeholder:text-text-muted" placeholder="예: 홍길동 대표공인중개사" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-body-sm text-body-sm font-semibold text-navy-deep">상호명 (사무소명)</label>
+<input class="w-full h-11 px-3 rounded bg-canvas-bg border-0 focus:ring-2 focus:ring-blue-signal font-body-sm text-body-sm text-navy-deep placeholder:text-text-muted" placeholder="예: 분양LAB 부동산중개사무소" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-body-sm text-body-sm font-semibold text-navy-deep">연락처 *</label>
+<input class="w-full h-11 px-3 rounded bg-canvas-bg border-0 focus:ring-2 focus:ring-blue-signal font-body-sm text-body-sm text-navy-deep placeholder:text-text-muted" placeholder="010-0000-0000" required="" type="tel"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-body-sm text-body-sm font-semibold text-navy-deep">이메일 주소 * (견적서 수신용)</label>
+<input class="w-full h-11 px-3 rounded bg-canvas-bg border-0 focus:ring-2 focus:ring-blue-signal font-body-sm text-body-sm text-navy-deep placeholder:text-text-muted" placeholder="consult@domain.com" required="" type="email"/>
+</div>
+</div>
+<!-- Inquired Details Textarea -->
+<div class="flex flex-col gap-1.5">
+<label class="font-body-sm text-body-sm font-semibold text-navy-deep">문의 내용 및 희망 착수 시점</label>
+<textarea class="w-full p-3 rounded bg-canvas-bg border-0 focus:ring-2 focus:ring-blue-signal font-body-sm text-body-sm text-navy-deep placeholder:text-text-muted" placeholder="매물 유형(오피스텔, 상가, 아파트 등), 특별 요청사항, 희망하시는 납품 마감일을 간략히 남겨주세요." rows="3"></textarea>
+</div>
+<!-- Privacy Policy Check -->
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded text-navy-deep focus:ring-blue-signal w-4 h-4" required="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-text-muted">개인정보 수집 및 상담 목적 이용에 동의합니다. (영업 목적 타인 양도 절대 불가)</span>
+</label>
+<!-- Submit Button -->
+<button class="w-full py-3.5 rounded bg-navy-deep text-on-primary font-body-md text-body-md font-semibold hover:bg-navy-slate transition-colors shadow-md flex items-center justify-center gap-2" type="submit">
+<span>상담 신청 및 견적서 요청</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+<!-- Toast Message (Interactive inline reaction) -->
+<div class="hidden mt-4 p-4 rounded-lg bg-status-verified text-on-primary flex items-start gap-3 shadow-md" id="inquiry-complete-toast">
+<span class="material-symbols-outlined text-[24px] shrink-0">check_circle</span>
+<div>
+<p class="font-body-md text-body-md font-bold">상담 신청이 정상적으로 접수되었습니다.</p>
+<p class="font-body-sm text-body-sm mt-0.5 opacity-90">대표 연구원이 직접 남겨주신 연락처로 1영업일 이내에 사전 착수 일정과 상세 견적서를 안내해 드리겠습니다.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg pb-space-xl border-b border-border-subtle"><div class="md:col-span-5 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="flex items-center justify-center w-7 h-7 rounded-lg bg-navy-deep text-on-primary font-label-caps text-label-caps">LAB</span><span class="font-headline-sm text-headline-sm text-navy-deep">분양LAB</span></div><p class="font-body-md text-body-md text-teal-lab font-semibold mt-1">좋은 분양을 연구합니다.</p><p class="font-body-sm text-body-sm text-text-muted max-w-md mt-1 leading-relaxed">분양LAB은 실무 검증 기반의 분석 데이터와 규격화된 제작 프로세스를 바탕으로 현장 맞춤형 부동산 콘텐츠 및 디지털 마케팅 실행 체계를 구축하는 B2B 분양 전문 연구 브랜드입니다.</p><div class="flex flex-wrap gap-space-xs mt-space-sm"><span class="inline-flex items-center px-space-sm py-0.5 rounded bg-surface-container-low text-navy-slate font-label-code text-label-code">정보의 정확성</span><span class="inline-flex items-center px-space-sm py-0.5 rounded bg-surface-container-low text-navy-slate font-label-code text-label-code">실무 중심 제작</span><span class="inline-flex items-center px-space-sm py-0.5 rounded bg-surface-container-low text-navy-slate font-label-code text-label-code">투명한 업무 범위</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">표준 연구 서비스 6종</span><ul class="grid grid-cols-2 gap-y-2 gap-x-space-sm font-body-sm text-body-sm text-text-muted"><li class="flex items-center gap-1.5"><span class="font-label-code text-label-code text-blue-signal">SVC-01</span> 카드뉴스 기획·제작</li><li class="flex items-center gap-1.5"><span class="font-label-code text-label-code text-blue-signal">SVC-02</span> 블로그 심층 분석글</li><li class="flex items-center gap-1.5"><span class="font-label-code text-label-code text-blue-signal">SVC-03</span> 숏폼 영상 편집</li><li class="flex items-center gap-1.5"><span class="font-label-code text-label-code text-blue-signal">SVC-04</span> 분양 브로슈어/웹리플릿</li><li class="flex items-center gap-1.5"><span class="font-label-code text-label-code text-blue-signal">SVC-05</span> 현장 브리핑 프리젠테이션</li><li class="flex items-center gap-1.5"><span class="font-label-code text-label-code text-blue-signal">SVC-06</span> 퍼포먼스 타깃 집행 대행</li></ul></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">운영 및 심사 원칙</span><p class="font-body-sm text-body-sm text-text-muted leading-relaxed">모든 산출물은 사전 팩트체크와 규정 검토 절차를 준수하며, 명시된 규격에 따라 제공됩니다. 임의의 과장 광고나 투기 조장 콘텐츠는 일체 제작하지 않습니다.</p><div class="mt-space-xs"><a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-blue-signal font-semibold hover:underline" data-path="consultation-inquiry" href="#">검증 프로세스 문의 <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><p class="font-body-sm text-body-sm text-text-muted"><span class="font-semibold text-navy-slate">운영 원칙 및 유의사항:</span> 분양LAB은 객관적 정보 전달과 과학적 콘텐츠 설계를 지향하며, 특정 조회수나 계약 수익을 일방적으로 보장하지 않습니다. 정해진 계약 산출물 규격과 검증 절차에 따라 성실히 제작 및 실행됩니다.</p><p class="font-label-caps text-label-caps text-text-muted mt-1">© 2024 BUNYANG LAB. ALL RIGHTS RESERVED. EMPIRICAL REAL ESTATE CONTENT RESEARCH.</p></div><div class="flex items-center gap-space-md"><span class="font-label-code text-label-code text-status-verified flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">verified</span> FACT-CHECK VERIFIED</span><span class="font-label-code text-label-code text-text-muted">REV.2024-Q4</span></div></div></div></footer></body></html>
